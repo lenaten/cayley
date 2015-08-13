@@ -15,9 +15,5 @@ EXPOSE 64210
 
 ENTRYPOINT ["/opt/cayley"]
 
-VOLUME /etc/cayley
-
-ADD cayley.cfg /etc/cayley/cayley.cfg
-
 CMD cayley init -config=$CAYLEY_CFG -logtostderr=true && \
     cayley http -config=$CAYLEY_CFG -logtostderr=true
