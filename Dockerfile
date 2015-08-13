@@ -2,18 +2,17 @@ FROM google/golang
 
 MAINTAINER maman.nathaniel@gmail.com
 
-WORKDIR /opt
-RUN git clone https://github.com/google/cayley.git
-
-WORKDIR /opt/cayley
-RUN go get github.com/tools/godep
-RUN godep restore
-RUN go get github.com/google/cayley
-RUN go build ./cmd/cayley
-
 EXPOSE 64210
 
-ENTRYPOINT ["/opt/cayley"]
+WORKDIR /opt
 
-CMD cayley init -config=$CAYLEY_CFG -logtostderr=true && \
-    cayley http -config=$CAYLEY_CFG -logtostderr=true
+RUN apt-get install wget && \
+    wget https://github.com/google/cayley/releases/download/v0.4.1/cayley_0.4.1_linux_amd64.tar.gz && \
+    mkdir /opt/cayley && \
+    tar xf cayley_0.4.1_linux_amd64.tar.gz -C /opt/cayley --strip-components 1 && \
+    rm cayley_0.4.1_linux_amd64.tar.gz
+
+WORKDIR /opt/cayley
+
+CMD ./cayley init -config=$CAYLEY_CFG -logtostderr=true && \
+    ./cayley http -config=$CAYLEY_CFG -logtostderr=true
