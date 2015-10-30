@@ -11,12 +11,10 @@ Its goal is to be a part of the developer's toolbox where Linked Data and graph-
 
 # How to use this image
 
-## run
-- `docker run -it -p 64210:64210 lenaten/cayley`
+## Start a Cayley instance
+to start 
+`docker run -it -p 64210:64210 lenaten/cayley`
 
-## build and run
-- `docker build -t lenaten/cayley .`
-- `docker run -it -p 64210:64210 lenaten/cayley`
-
-## custom config
+## Customize cayley config
+Cayley config exsits in /etc/cayley/cayley.cfg with default and simple config. To replace the original config with your own, run the command below. Please remember to replace the `<config_dir>` with the absulote local config file. 
 - `docker run -it -p 64210:64210 -v <config_dir>:/etc/cayley/ cayley`
