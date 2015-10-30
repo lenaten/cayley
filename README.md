@@ -16,5 +16,5 @@ to start
 `docker run -it -p 64210:64210 lenaten/cayley`
 
 ## Customize cayley config
-Cayley config exsits in /etc/cayley/cayley.cfg with default and simple config. To replace the original config with your own, run the command below. Please remember to replace the `<config_dir>` with the absulote local config file. 
+Cayley config exsits in /etc/cayley/cayley.cfg with default and simple config. To replace the original config with your own, run the command below. Please remember to replace the `<config_dir>` with the absolute path of your config file. 
 - `docker run -it -p 64210:64210 -v <config_dir>:/etc/cayley/ cayley`
