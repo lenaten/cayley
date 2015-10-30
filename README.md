@@ -1,7 +1,7 @@
 ![logo](https://raw.githubusercontent.com/google/cayley/master/static/branding/cayley_side.png?raw=true)
 
 # Supported tags and respective `Dockerfile` links
--	[`0.4.1`, `latest` (0.4.*/Dockerfile*)](https://github.com/lenaten/cayley/blob/master/Dockerfile)
+-	[`0.4.1`, `latest` (0.4.1/Dockerfile)](https://github.com/lenaten/cayley/blob/master/Dockerfile)
 
 # What is Cayley
 
