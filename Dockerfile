@@ -28,5 +28,3 @@ CMD cayley init && \
     cayley http
 
 EXPOSE 64210
-
-# docker run -it -p 64210:64210 --rm cayley
